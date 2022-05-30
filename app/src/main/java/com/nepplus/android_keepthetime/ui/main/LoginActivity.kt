@@ -46,7 +46,7 @@ class LoginActivity : BaseActivity() {
                         ContextUtil.setAutoLogin(mContext, binding.autoLoginCb.isChecked)
                         GlobalData.loginUser = br.data.user
 
-                        Toast.makeText(mContext, "${GlobalData.loginUser!!.nick_name}님 환영합니다", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(mContext, "${GlobalData.loginUser!!.nickname}님 환영합니다", Toast.LENGTH_SHORT).show()
 
                         val myIntent = Intent(mContext, MainActivity::class.java)
                         startActivity(myIntent)
@@ -55,7 +55,7 @@ class LoginActivity : BaseActivity() {
                     }else{
                         val errorBodyStr = response.errorBody()!!.string()
                         val jsonObj = JSONObject(errorBodyStr)
-                        val code = jsonObj.getInt("code")
+//                        val code = jsonObj.getInt("code")
                         val message = jsonObj.getString("message")
 
                         Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show()
