@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Toast
 import com.nepplus.android_keepthetime.BaseActivity
 import com.nepplus.android_keepthetime.R
 import com.nepplus.android_keepthetime.models.BasicResponse
@@ -51,7 +52,9 @@ class SplashActivity : BaseActivity() {
 
             val myIntent : Intent
             if(isTokenOk && ContextUtil.getAutoLogin(mContext)){
+                Toast.makeText(mContext, "${GlobalData.loginUser!!.nick_name}님 환영합니다", Toast.LENGTH_SHORT).show()
                 myIntent = Intent(mContext, MainActivity::class.java)
+
             }else{
                 myIntent = Intent(mContext, LoginActivity::class.java)
             }

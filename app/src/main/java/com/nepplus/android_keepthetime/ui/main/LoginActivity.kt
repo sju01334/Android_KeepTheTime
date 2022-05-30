@@ -9,6 +9,8 @@ import com.nepplus.android_keepthetime.R
 import com.nepplus.android_keepthetime.databinding.ActivityLoginBinding
 import com.nepplus.android_keepthetime.models.BasicResponse
 import com.nepplus.android_keepthetime.ui.signup.SignUpActivity
+import com.nepplus.android_keepthetime.utils.ContextUtil
+import com.nepplus.android_keepthetime.utils.GlobalData
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -37,7 +39,12 @@ class LoginActivity : BaseActivity() {
                 ) {
                     if(response.isSuccessful){
                         val br = response.body()!!
-                        Toast.makeText(mContext, "${br.data.user.nick_name}님 환영합니다", Toast.LENGTH_SHORT).show()
+
+                        ContextUtil.setLoginToken(mContext, br.data.token)
+                        ContextUtil.setAutoLogin(mContext, binding.autoLoginCb.isChecked)
+                        GlobalData.loginUser = br.data.user
+
+                        Toast.makeText(mContext, "${GlobalData.loginUser!!.nick_name}님 환영합니다", Toast.LENGTH_SHORT).show()
 
                         val myIntent = Intent(mContext, MainActivity::class.java)
                         startActivity(myIntent)
