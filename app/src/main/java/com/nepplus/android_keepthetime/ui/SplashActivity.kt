@@ -17,7 +17,7 @@ class SplashActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
-
+//        apiList.getRequestMyInfo()
     }
 
     override fun setValues() {

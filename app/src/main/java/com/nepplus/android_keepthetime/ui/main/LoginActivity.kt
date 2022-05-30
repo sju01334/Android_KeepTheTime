@@ -1,12 +1,10 @@
 package com.nepplus.android_keepthetime.ui.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.nepplus.android_keepthetime.BaseActivity
-import com.nepplus.android_keepthetime.MainActivity
 import com.nepplus.android_keepthetime.R
 import com.nepplus.android_keepthetime.databinding.ActivityLoginBinding
 import com.nepplus.android_keepthetime.models.BasicResponse
