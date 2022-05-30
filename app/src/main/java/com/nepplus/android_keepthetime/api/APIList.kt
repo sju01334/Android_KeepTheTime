@@ -7,6 +7,7 @@ import retrofit2.http.*
 interface APIList {
 
     //    user
+    @FormUrlEncoded
     @POST("/user")
     fun postRequestLogin(
         @Field("email") email : String,
