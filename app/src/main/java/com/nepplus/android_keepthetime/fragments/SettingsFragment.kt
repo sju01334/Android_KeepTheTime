@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.nepplus.android_keepthetime.R
 import com.nepplus.android_keepthetime.databinding.FragmentMyAppointmentsBinding
+import com.nepplus.android_keepthetime.databinding.FragmentSettingsBinding
 
 class SettingsFragment : BaseFragment() {
 
-    lateinit var binding : FragmentMyAppointmentsBinding
+    lateinit var binding : FragmentSettingsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,10 +30,8 @@ class SettingsFragment : BaseFragment() {
     }
 
     override fun setupEvents() {
-        TODO("Not yet implemented")
     }
 
     override fun setValues() {
-        TODO("Not yet implemented")
     }
 }

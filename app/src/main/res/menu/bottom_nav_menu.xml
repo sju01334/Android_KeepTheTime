@@ -6,7 +6,7 @@
     <item android:id="@+id/invitedAppointments"
         android:icon="@drawable/invite_icon"
         android:title="초대받은"/>
-    <item android:id="@+id/sedtting"
+    <item android:id="@+id/settings"
         android:icon="@drawable/setting_icon"
         android:title="설정"/>
 

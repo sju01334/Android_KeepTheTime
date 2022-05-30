@@ -2,6 +2,7 @@ package com.nepplus.android_keepthetime.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.nepplus.android_keepthetime.BaseActivity
@@ -39,6 +40,7 @@ class LoginActivity : BaseActivity() {
                 ) {
                     if(response.isSuccessful){
                         val br = response.body()!!
+                        Log.d("성공", br.toString())
 
                         ContextUtil.setLoginToken(mContext, br.data.token)
                         ContextUtil.setAutoLogin(mContext, binding.autoLoginCb.isChecked)
@@ -62,7 +64,7 @@ class LoginActivity : BaseActivity() {
                 }
 
                 override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
-                    TODO("Not yet implemented")
+
                 }
             })
         }
