@@ -11,6 +11,13 @@ interface APIList {
     fun getRequestMyInfo() : Call<BasicResponse>
 
     @FormUrlEncoded
+    @PATCH("/user")
+    fun patchRequestEditUserInfo(
+        @Field("field") field : String,
+        @Field("value") value : String
+    ) : Call<BasicResponse>
+
+    @FormUrlEncoded
     @POST("/user")
     fun postRequestLogin(
         @Field("email") email : String,
