@@ -30,6 +30,28 @@ class SettingsFragment : BaseFragment() {
     }
 
     override fun setupEvents() {
+//        프로필 이미지 변경 이벤트
+        binding.profileImg.setOnClickListener {
+
+        }
+//        닉네임 변경 이벤트
+        binding.changeNickLayout.setOnClickListener {
+
+        }
+//        외출 준비시간 변경
+        binding.readyTimeLayout.setOnClickListener {
+
+        }
+//        비밀번호 변경
+        binding.changePwLayout.setOnClickListener {  }
+//        출발장소 변경
+        binding.myPlaceLayout.setOnClickListener {  }
+//        친구 목록 관리
+        binding.changePwLayout.setOnClickListener {  }
+//        로그아웃
+        binding.logoutLayout.setOnClickListener {
+
+        }
     }
 
     override fun setValues() {
