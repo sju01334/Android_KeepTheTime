@@ -28,6 +28,7 @@ class SplashActivity : BaseActivity() {
             val myIntent : Intent
             myIntent = Intent(mContext, LoginActivity::class.java)
             startActivity(myIntent)
+            finish()
 
         },2500)
     }
