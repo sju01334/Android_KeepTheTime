@@ -11,8 +11,10 @@ import com.bumptech.glide.Glide
 import com.nepplus.android_keepthetime.R
 import com.nepplus.android_keepthetime.api.APIList
 import com.nepplus.android_keepthetime.api.ServerApi
+import com.nepplus.android_keepthetime.fragments.RequestFriendsListFragment
 import com.nepplus.android_keepthetime.models.BasicResponse
 import com.nepplus.android_keepthetime.models.UserData
+import com.nepplus.android_keepthetime.ui.settings.MyFriendsActivity
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -76,6 +78,16 @@ class MyFriendsRecyclerAdapter(
 
                                 Log.e("승인_거절 실패", message)
                             }
+
+//                            프래그먼트의 요청목록(requested Friends List) 새로 받아오는 함수를 실행
+//                            어댑터 -> 액티비티 : context  변수 활용
+
+//                            ViewPager 2 에서 fragment 를 찾아서 새로 받아오는 함수 실행
+//                            ViewPager2 에서는 내부의 fragment 를 지정할 수 없다 => tag 값으로 찾아온다
+                            ((mContext as MyFriendsActivity)
+                                .supportFragmentManager
+                                .findFragmentByTag("f1") as RequestFriendsListFragment)
+                                .getRequestedFriendsListFromServer()
                         }
 
                         override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
