@@ -7,31 +7,35 @@ import retrofit2.http.*
 
 interface APIList {
 
+    //  search
+    @GET("/search/user")
+    fun getRequestSearchUser(@Query("nickname") nickname : String) : Call<BasicResponse>
+
     //    user
     @GET("/user")
-    fun getRequestMyInfo() : Call<BasicResponse>
+    fun getRequestMyInfo(): Call<BasicResponse>
 
     @FormUrlEncoded
     @PATCH("/user")
     fun patchRequestEditUserInfo(
-        @Field("field") field : String,
-        @Field("value") value : String
-    ) : Call<BasicResponse>
+        @Field("field") field: String,
+        @Field("value") value: String
+    ): Call<BasicResponse>
 
     @FormUrlEncoded
     @POST("/user")
     fun postRequestLogin(
-        @Field("email") email : String,
-        @Field("password") password : String
-    ) : Call<BasicResponse>
+        @Field("email") email: String,
+        @Field("password") password: String
+    ): Call<BasicResponse>
 
     @FormUrlEncoded
     @PUT("/user")
     fun putRequestSignUp(
-        @Field("email") email : String,
-        @Field("password") pw : String,
-        @Field("nick_name") nickname : String,
-    ) : Call<BasicResponse>
+        @Field("email") email: String,
+        @Field("password") pw: String,
+        @Field("nick_name") nickname: String,
+    ): Call<BasicResponse>
 
     @GET("/user/check")
     fun getRequestUserCheck(
@@ -41,5 +45,5 @@ interface APIList {
 
     @Multipart
     @PUT("/user/image")
-    fun putRequestUserImage(@Part profileImg : MultipartBody.Part) : Call<BasicResponse>
+    fun putRequestUserImage(@Part profileImg: MultipartBody.Part): Call<BasicResponse>
 }

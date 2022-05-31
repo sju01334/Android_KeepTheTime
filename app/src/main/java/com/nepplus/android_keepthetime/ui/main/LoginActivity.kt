@@ -40,7 +40,6 @@ class LoginActivity : BaseActivity() {
                 ) {
                     if(response.isSuccessful){
                         val br = response.body()!!
-                        Log.d("성공", br.toString())
 
                         ContextUtil.setLoginToken(mContext, br.data.token)
                         ContextUtil.setAutoLogin(mContext, binding.autoLoginCb.isChecked)

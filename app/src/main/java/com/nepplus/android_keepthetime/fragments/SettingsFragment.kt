@@ -214,7 +214,6 @@ class SettingsFragment : BaseFragment() {
                                 } else {
                                     val errorBodyStr = response.errorBody()!!.string()
                                     val jsonObj = JSONObject(errorBodyStr)
-                                    val code = jsonObj.getInt("code")
                                     val message = jsonObj.getString("message")
                                     Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show()
                                 }
@@ -315,8 +314,7 @@ class SettingsFragment : BaseFragment() {
 
 //            파일을 retrofit 에 첨부할 수 있는 => ReqeustBody => MultipartBody  형태로 변환
                 val fileReqBody = RequestBody.create(MediaType.get("image/*"), file)
-                val body =
-                    MultipartBody.Part.createFormData("profile_image", "myFile.jpg", fileReqBody)
+                val body = MultipartBody.Part.createFormData("profile_image", "myFile.jpg", fileReqBody)
 
                 apiList.putRequestUserImage(body).enqueue(object : Callback<BasicResponse> {
                     override fun onResponse(

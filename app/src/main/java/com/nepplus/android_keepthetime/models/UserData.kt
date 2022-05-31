@@ -13,4 +13,6 @@ class UserData (
     @SerializedName("ready_minute")
     val readyMinute : String,
 ) {
+
+
 }

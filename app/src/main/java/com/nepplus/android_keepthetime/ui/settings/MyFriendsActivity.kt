@@ -1,5 +1,6 @@
 package com.nepplus.android_keepthetime.ui.settings
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
@@ -25,7 +26,8 @@ class MyFriendsActivity : BaseActivity() {
 
     override fun setupEvents() {
         addBtn.setOnClickListener {
-
+            val myIntent = Intent(mContext, AddFriendsActivity::class.java)
+            startActivity(myIntent)
         }
     }
 
