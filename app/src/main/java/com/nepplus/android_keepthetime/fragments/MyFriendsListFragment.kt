@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.nepplus.android_keepthetime.R
+import com.nepplus.android_keepthetime.adapters.FriendViewPagerAdapter
 import com.nepplus.android_keepthetime.databinding.FragmentMyFriendsListBinding
 
 class MyFriendsListFragment : BaseFragment() {
 
     lateinit var binding : FragmentMyFriendsListBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater,

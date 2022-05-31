@@ -27,6 +27,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setValues() {
+        titleTxt.text = "내가 만든 약속"
+
         mPagerAdapter = MainViewPagerAdapter(this)
         binding.mainViewPager.adapter = mPagerAdapter
 
@@ -35,6 +37,11 @@ class MainActivity : BaseActivity() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
                     binding.bottomNav.menu.getItem(position).isChecked = true
+                    titleTxt.text = when(position){
+                        0 -> "내가 만든 약속"
+                        1 -> "초대 받은 약속"
+                        else -> "설정"
+                    }
                 }
             })
 
