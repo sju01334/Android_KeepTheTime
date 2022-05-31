@@ -28,10 +28,34 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
+        <LinearLayout
+            android:id="@+id/requestBtnLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/acceptBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="수락"
+                android:text="수락"/>
+            <Button
+                android:id="@+id/denyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:tag="거절"
+                android:text="거절"/>
+
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/addFriendBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:text="친구 요청"/>
 
     </LinearLayout>
