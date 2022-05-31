@@ -36,6 +36,8 @@ class AddFriendsActivity : BaseActivity() {
         binding.searchBtn.setOnClickListener {
 
             val inputNick = binding.searchEdt.text.toString()
+
+            Log.d("검색어", inputNick)
             if(inputNick.length < 2){
                 Toast.makeText(mContext, "검색어는 2자 이상 작성해주세요", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -50,12 +52,21 @@ class AddFriendsActivity : BaseActivity() {
                 ) {
                     if(response.isSuccessful){
                         val br = response.body()!!
+//                        어댑터의 아이템들을 모두 삭제한 뒤
+                        mFriendAdapter.notifyItemRangeRemoved(0, mFriendList.size)
 
+//                        리스트를 전면 삭제하고
                         mFriendList.clear()
+
+//                        새로운 (서버에서 내려준) 리스트로 다시 덮어주고
                         mFriendList.addAll(br.data.users)
 
-                        Log.d("받아온 유저 데이터 목록", br.data.users.toString())
-                        mFriendAdapter.notifyDataSetChanged()
+//                        어댑터의 아이템이 새로 들어왔음을 통보
+                        mFriendAdapter.notifyItemRangeInserted(0, mFriendList.size)
+
+//                        어댑터에 리스트가 바뀌었다는 사실 통보
+//                        RecyclerView의 모든 뷰를 삭제하고 다시 뷰를 생성 비효율적인 코드
+//                        mFriendAdapter.notifyDataSetChanged()
 
                     }
                 }

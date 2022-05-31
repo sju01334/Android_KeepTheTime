@@ -7,6 +7,7 @@
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_login.xml" value="0.2898550724637681" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_my_friends.xml" value="0.2375" />
+        <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_my_place_list.xml" value="0.14375" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_sign_up.xml" value="0.18489583333333334" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_splash.xml" value="0.2898550724637681" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/custom_alert_dialog.xml" value="0.2898550724637681" />
@@ -15,6 +16,7 @@
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/fragment_my_friends_list.xml" value="0.2375" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/fragment_request_friends_list.xml" value="0.2375" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/fragment_settings.xml" value="0.3392029657089898" />
+        <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/list_item_place.xml" value="0.3392029657089898" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/list_item_user.xml" value="0.33" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/my_custom_action_bar.xml" value="0.2375" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3463541666666667" />

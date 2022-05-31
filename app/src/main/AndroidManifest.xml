@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_KeepTheTime">
         <activity
+            android:name=".ui.settings.MyPlaceListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.settings.AddFriendsActivity"
             android:exported="false" />
         <activity
