@@ -47,6 +47,22 @@ interface APIList {
     @PUT("/user/image")
     fun putRequestUserImage(@Part profileImg: MultipartBody.Part): Call<BasicResponse>
 
+    //    user/friend
+    @GET("/user/friend")
+    fun getRequestMyFriendsList(@Query("type") type : String) : Call<BasicResponse>
+//    유저에게 친구 추가를 보내는 API
+    @FormUrlEncoded
+    @POST("/user/friend")
+    fun postRequestAddFriend(@Field ("user_id") userId : Int) : Call<BasicResponse>
+
+    @FormUrlEncoded
+    @PUT ("/user/friend")
+    fun putRequestAnswerRequest(
+        @Field ("user_id") userId : Int,
+        @Field("type") type: String,
+    ) : Call<BasicResponse>
+
+
 //    place
     @GET("/user/place")
     fun getRequestUserMyPlace() : Call<BasicResponse>

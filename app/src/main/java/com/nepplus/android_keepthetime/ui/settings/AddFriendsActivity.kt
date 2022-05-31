@@ -1,6 +1,5 @@
 package com.nepplus.android_keepthetime.ui.settings
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -81,7 +80,7 @@ class AddFriendsActivity : BaseActivity() {
     }
 
     override fun setValues() {
-        mFriendAdapter = MyFriendsRecyclerAdapter(mContext, mFriendList)
+        mFriendAdapter = MyFriendsRecyclerAdapter(mContext, mFriendList, "add")
         binding.findUserRecyclerView.adapter = mFriendAdapter
         binding.findUserRecyclerView.layoutManager = LinearLayoutManager(mContext)
 
