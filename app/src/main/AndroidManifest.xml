@@ -12,6 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_KeepTheTime">
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="fzb5adfbgo" />
+
+        <activity
+            android:name=".ui.settings.EditMyPlaceActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.settings.MyPlaceListActivity"
             android:exported="false" />

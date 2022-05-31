@@ -82,99 +82,6 @@ class SettingsFragment : BaseFragment() {
                 .check()
 
         }
-////        닉네임 변경 이벤트
-//        binding.changeNickLayout.setOnClickListener {
-//            val alert = CustomAlertDialog(mContext, requireActivity())
-//            alert.myDialog()
-//
-//            alert.binding.titleTxt.text = "닉네임 변경"
-//            alert.binding.bodyTxt.visibility = View.GONE
-//            alert.binding.contentEdt.hint = "변경할 닉네임을 입력해 주세요"
-//            alert.binding.contentEdt.inputType = InputType.TYPE_CLASS_TEXT
-//
-//
-//            alert.binding.positiveBtn.setOnClickListener {
-//
-//                val changedNick = alert.binding.contentEdt.text.toString()
-//
-//                apiList.patchRequestEditUserInfo("nickname", changedNick)
-//                    .enqueue(object : Callback<BasicResponse> {
-//                        override fun onResponse(
-//                            call: Call<BasicResponse>,
-//                            response: Response<BasicResponse>
-//                        ) {
-//                            if (response.isSuccessful) {
-//                                val br = response.body()!!
-//                                GlobalData.loginUser = br.data.user
-//                                setUserData()
-//                                alert.dialog.dismiss()
-//
-//                            } else {
-//                                val errorBodyStr = response.errorBody()!!.string()
-//                                val jsonObj = JSONObject(errorBodyStr)
-//
-//                                val message = jsonObj.getString("message")
-//
-//                                Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show()
-//
-//                            }
-//                        }
-//
-//                        override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
-//                        }
-//                    })
-//            }
-//            alert.binding.negativeBtn.setOnClickListener {
-//                alert.dialog.dismiss()
-//            }
-//
-//        }
-////        외출 준비시간 변경
-//        binding.readyTimeLayout.setOnClickListener {
-//            val alert = CustomAlertDialog(mContext, requireActivity())
-//            alert.myDialog()
-//
-//            alert.binding.titleTxt.text = "준비시간 변경"
-//            alert.binding.bodyTxt.visibility = View.GONE
-//            alert.binding.contentEdt.hint = "외출준비에 몇분 걸리는지?"
-//            alert.binding.contentEdt.inputType = InputType.TYPE_CLASS_NUMBER
-//
-//
-//            alert.binding.positiveBtn.setOnClickListener {
-//
-//                val changedNick = alert.binding.contentEdt.text.toString()
-//
-//                apiList.patchRequestEditUserInfo("ready_minute", changedNick)
-//                    .enqueue(object : Callback<BasicResponse> {
-//                        override fun onResponse(
-//                            call: Call<BasicResponse>,
-//                            response: Response<BasicResponse>
-//                        ) {
-//                            if (response.isSuccessful) {
-//                                val br = response.body()!!
-//                                GlobalData.loginUser = br.data.user
-//                                setUserData()
-//                                alert.dialog.dismiss()
-//
-//                            } else {
-//                                val errorBodyStr = response.errorBody()!!.string()
-//                                val jsonObj = JSONObject(errorBodyStr)
-//                                val code = jsonObj.getInt("code")
-//                                val message = jsonObj.getString("message")
-//                                Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show()
-//                            }
-//                        }
-//
-//                        override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
-//                        }
-//                    })
-//
-//            }
-//            alert.binding.negativeBtn.setOnClickListener {
-//                alert.dialog.dismiss()
-//            }
-//
-//        }
 
         val ocl = object : View.OnClickListener {
             override fun onClick(p0: View?) {
@@ -182,6 +89,8 @@ class SettingsFragment : BaseFragment() {
 
                 val alert = CustomAlertDialog(mContext, requireActivity())
                 alert.myDialog()
+
+                alert.binding.bodyTxt.visibility = View.GONE
 
                 when (type) {
                     "nickname" -> {
@@ -196,11 +105,12 @@ class SettingsFragment : BaseFragment() {
                     }
                 }
 
+
                 alert.binding.positiveBtn.setOnClickListener {
 
-                    val changedNick = alert.binding.contentEdt.text.toString()
+                    val changedEdt = alert.binding.contentEdt.text.toString()
 
-                    apiList.patchRequestEditUserInfo("ready_minute", changedNick)
+                    apiList.patchRequestEditUserInfo(type, changedEdt)
                         .enqueue(object : Callback<BasicResponse> {
                             override fun onResponse(
                                 call: Call<BasicResponse>,
@@ -231,17 +141,19 @@ class SettingsFragment : BaseFragment() {
             }
         }
 
+//        닉네임 변경 이벤트
         binding.changeNickLayout.setOnClickListener(ocl)
+//        외출시간 변경 이벤트
         binding.readyTimeLayout.setOnClickListener(ocl)
 
-//        비밀번호 변경
+//        비밀번호 변경 이벤트
         binding.changePwLayout.setOnClickListener { }
-//        출발장소 변경
+//        출발장소 변경 이벤트
         binding.myPlaceLayout.setOnClickListener {
             val myIntent = Intent(mContext, MyPlaceListActivity::class.java)
             startActivity(myIntent)
         }
-//        친구 목록 관리
+//        친구 목록 관리 이벤트
         binding.myFriendsLayout.setOnClickListener {
             val myIntent = Intent(mContext, MyFriendsActivity::class.java)
             startActivity(myIntent)
@@ -295,7 +207,7 @@ class SettingsFragment : BaseFragment() {
             .into(binding.profileImg)
 
         binding.nicknameTxt.text = GlobalData.loginUser!!.nickname
-        binding.readyTimeTxt.text = GlobalData.loginUser!!.readyMinute
+        binding.readyTimeTxt.text = "${GlobalData.loginUser!!.readyMinute}분"
     }
 
     val startForResult =
