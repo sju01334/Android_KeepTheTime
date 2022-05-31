@@ -20,6 +20,7 @@ import com.nepplus.android_keepthetime.dialogs.CustomAlertDialog
 import com.nepplus.android_keepthetime.models.BasicResponse
 import com.nepplus.android_keepthetime.ui.main.LoginActivity
 import com.nepplus.android_keepthetime.ui.settings.MyFriendsActivity
+import com.nepplus.android_keepthetime.ui.settings.MyPlaceListActivity
 import com.nepplus.android_keepthetime.utils.ContextUtil
 import com.nepplus.android_keepthetime.utils.GlobalData
 import com.nepplus.android_keepthetime.utils.URIPathHelper
@@ -236,7 +237,10 @@ class SettingsFragment : BaseFragment() {
 //        비밀번호 변경
         binding.changePwLayout.setOnClickListener { }
 //        출발장소 변경
-        binding.myPlaceLayout.setOnClickListener { }
+        binding.myPlaceLayout.setOnClickListener {
+            val myIntent = Intent(mContext, MyPlaceListActivity::class.java)
+            startActivity(myIntent)
+        }
 //        친구 목록 관리
         binding.myFriendsLayout.setOnClickListener {
             val myIntent = Intent(mContext, MyFriendsActivity::class.java)
