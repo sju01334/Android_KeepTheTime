@@ -23,7 +23,7 @@ class MyAppointmentRecyclerView(
 
             binding.timeTxt.text = "${sdf.format(item.datetime)}"
             binding.placeNameTxt.text = "약속장소 : ${item.place}"
-            binding.memberCountTxt.text = "약속장소 : ${item.invitedFriends.size}"
+            binding.memberCountTxt.text = "참여인원 : ${item.invitedFriends.size} 명"
         }
     }
 
