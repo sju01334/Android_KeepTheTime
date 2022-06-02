@@ -47,6 +47,14 @@ interface APIList {
     @PUT("/user/image")
     fun putRequestUserImage(@Part profileImg: MultipartBody.Part): Call<BasicResponse>
 
+    @FormUrlEncoded
+    @POST("/user/social")
+    fun postRequestSocialLogin(
+        @Field("provider") provider : String,
+        @Field("uid") uid : String,
+        @Field("nick_name") nickname : String
+    ) : Call<BasicResponse>
+
     //    user/friend
     @GET("/user/friend")
     fun getRequestMyFriendsList(@Query("type") type : String) : Call<BasicResponse>
