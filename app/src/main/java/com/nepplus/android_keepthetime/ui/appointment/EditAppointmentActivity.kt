@@ -176,8 +176,11 @@ class EditAppointmentActivity : BaseActivity() {
             }
 
             var friendListStr = ""
+
 //            서버에서 요구한 약속 일시 형태 지정
             val sdf =SimpleDateFormat("yyyy-MM-dd HH:mm")
+//            서버에 내 시간 정보 (Date) 를 올릴떄도, UTC로 변환하여 통신
+            sdf.timeZone = TimeZone.getTimeZone("UTC")
 
             apiList.postRequestAddAppointment(
                 inputTitle,
