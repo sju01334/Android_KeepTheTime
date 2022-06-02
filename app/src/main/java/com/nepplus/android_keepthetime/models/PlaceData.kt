@@ -6,7 +6,7 @@ class PlaceData(
     val id : Int,
     val name : String,
     val latitude : Double,
-    val Longitude : Double,
+    val longitude : Double,
     @SerializedName("is_primary")
     val isPrimary : Boolean
 ){

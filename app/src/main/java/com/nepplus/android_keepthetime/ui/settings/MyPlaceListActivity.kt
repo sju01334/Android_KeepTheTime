@@ -1,7 +1,6 @@
 package com.nepplus.android_keepthetime.ui.settings
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
@@ -56,7 +55,7 @@ class MyPlaceListActivity : BaseActivity() {
     }
 
     fun getMyPlaceListFromServer(){
-        apiList.getRequestUserMyPlace().enqueue(object : Callback<BasicResponse>{
+        apiList.getRequestMyPlace().enqueue(object : Callback<BasicResponse>{
             override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
                 if(response.isSuccessful){
                     val br = response.body()!!

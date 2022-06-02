@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/drawable/lightgray_rectangle_r6.xml" value="0.1845" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_add_friends.xml" value="0.2375" />
-        <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_edit_appointment.xml" value="0.17604166666666668" />
+        <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_edit_appointment.xml" value="0.33" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_edit_my_place.xml" value="0.25104166666666666" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_login.xml" value="0.2898550724637681" />
         <entry key="..\:/Nepplus/Android/Android_KeepTheTime/app/src/main/res/layout/activity_main.xml" value="0.25" />

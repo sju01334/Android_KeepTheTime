@@ -73,7 +73,7 @@ interface APIList {
 
 //    place
     @GET("/user/place")
-    fun getRequestUserMyPlace() : Call<BasicResponse>
+    fun getRequestMyPlace() : Call<BasicResponse>
 
     @FormUrlEncoded
     @POST("/user/place")
@@ -82,5 +82,20 @@ interface APIList {
         @Field("latitude") latitude : Double,
         @Field("longitude") longitude : Double,
         @Field("is_primary") isPrimary : Boolean,
+    ) : Call<BasicResponse>
+
+//    appointment
+    @FormUrlEncoded
+    @POST("/appointment")
+    fun postRequestAddAppointment (
+    @Field("title") title : String,
+    @Field("datetime") datetime : String,
+    @Field("start_place") startPlace : String,
+    @Field("start_latitude") startLatitude : Double,
+    @Field("start_longitude") startLongitude : Double,
+    @Field("place") place  : String,
+    @Field("latitude") latitude : Double,
+    @Field("longitude") longitude : Double,
+    @Field("friend_list") friendList : String,
     ) : Call<BasicResponse>
 }
