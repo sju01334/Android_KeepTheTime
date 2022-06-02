@@ -1,11 +1,13 @@
 package com.nepplus.android_keepthetime.api
 
 import android.content.Context
+import com.google.gson.GsonBuilder
 import com.nepplus.android_keepthetime.utils.ContextUtil
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 
 class ServerApi {
 
@@ -32,6 +34,12 @@ class ServerApi {
                     }
                 }
 
+//                gson에서 날짜 양식을 어떻게 파싱할 건지 => 추가 기능을 가진 gson 으로 생성
+                val gson = GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss")
+//                        시차 보정기를 보조 도구로 채택
+                    .registerTypeAdapter(Date::class.java, DateDeserializer())
+                    .create()
+
 //                retrofit : OkHttp의 확장판 => retrofit도 OkHttpClient 형태의 클라이언트 활용
 //                클라이언트에게 우리가 만든 인터셉터를 달아주자( 클라이언트 커스터 마이징 )
                 val myClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
@@ -39,7 +47,7 @@ class ServerApi {
                 retrofit = Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .client(myClient)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build()
 
             }

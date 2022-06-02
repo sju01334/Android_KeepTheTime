@@ -1,11 +1,12 @@
 package com.nepplus.android_keepthetime.models
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 data class AppointmentData(
     val id : Int,
     val title : String,
-    val datetime : String,
+    val datetime : Date,
     @SerializedName("start_place")
     val startPlace : String,
     @SerializedName("start_latitude")

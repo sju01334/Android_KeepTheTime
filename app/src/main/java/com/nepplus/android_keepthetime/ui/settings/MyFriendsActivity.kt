@@ -39,6 +39,8 @@ class MyFriendsActivity : BaseActivity() {
         mFriendsPagerAdapter = FriendViewPagerAdapter(this)
         binding.friendsListViewPager.adapter = mFriendsPagerAdapter
 
+//        ViewPager2 + TabLayout의 결합 코드
+//        파라미터 ( tablayout의 변수 ,  viewpager2의 변수
         TabLayoutMediator(binding.tabLayout, binding.friendsListViewPager){ tab, position ->
             when(position){
                 0 -> tab.text = "내 친구 목록"
