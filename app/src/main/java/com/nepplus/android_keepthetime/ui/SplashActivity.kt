@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.widget.Toast
+import com.kakao.sdk.common.util.Utility
 import com.nepplus.android_keepthetime.BaseActivity
 import com.nepplus.android_keepthetime.R
 import com.nepplus.android_keepthetime.models.BasicResponse
@@ -26,6 +27,8 @@ class SplashActivity : BaseActivity() {
         setContentView(R.layout.activity_splash)
         setupEvents()
         setValues()
+
+        getKeyhash()
     }
 
     override fun setupEvents() {
@@ -64,5 +67,12 @@ class SplashActivity : BaseActivity() {
             finish()
 
         },2500)
+    }
+
+
+    fun getKeyhash(){
+        var keyHash = Utility.getKeyHash(mContext)
+
+        Log.d("kakao_keyHash", keyHash)
     }
 }
