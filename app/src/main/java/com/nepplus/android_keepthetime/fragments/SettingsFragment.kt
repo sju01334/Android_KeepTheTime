@@ -193,8 +193,10 @@ class SettingsFragment : BaseFragment() {
 
         when (GlobalData.loginUser!!.provider) {
             "kakao" -> {
+                binding.socialLoginImg.setImageResource(R.drawable.kakao_login_icon)
             }
-            "naver" -> {
+            "facebook" -> {
+                binding.socialLoginImg.setImageResource(R.drawable.facebook_login_icon)
             }
             else -> binding.socialLoginImg.visibility = View.GONE
         }

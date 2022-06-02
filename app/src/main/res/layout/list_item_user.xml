@@ -23,6 +23,13 @@
             android:textSize="16sp"
             android:text="닉네임 자리"/>
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/socialLoginImg"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_marginStart="5dp"/>
+
         <Space
             android:layout_width="0dp"
             android:layout_height="wrap_content"
